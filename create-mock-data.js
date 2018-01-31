@@ -53,6 +53,7 @@ function createData () {
   let twoHoursLater = new Date(oneHourLater.getTime() + HOUR);
   let threeHoursLater = new Date(twoHoursLater.getTime() + HOUR);
 
+  // в последнем событии начало было позже конца
   let eventsPromise = models.Event.bulkCreate([
     {
       title: 'ШРИ 2018 - начало',
@@ -66,8 +67,8 @@ function createData () {
     },
     {
       title: '🍨 Пробуем kefir.js',
-      dateStart: threeHoursLater,
-      dateEnd: twoHoursLater
+      dateStart: twoHoursLater,
+      dateEnd: threeHoursLater
     }
   ]);
 
